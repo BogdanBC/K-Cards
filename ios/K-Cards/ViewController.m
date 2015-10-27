@@ -93,6 +93,12 @@
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:alertViewTitle message:alertViewMessage delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil] ;
     alertView.tag = 2;
     alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
+    
+    UITextField *textField = [alertView textFieldAtIndex:0];
+    [textField setText:self.nameLabel.text];
+
+    [textField performSelector:@selector(selectAll:) withObject:nil afterDelay:0.0];
+
     [alertView show];
 }
 
